@@ -137,11 +137,8 @@ Invoke-AtomicTest T1553.005 -TestNumbers 2 -Cleanup
 
 [![PowerShell Event ID 4104](https://github.com/naphattha/SOC_Home_Lab/raw/main/screenshots/case6-ps-event4104.png)](https://github.com/naphattha/SOC_Home_Lab/blob/main/screenshots/case6-ps-event4104.png) *PowerShell Event ID 4104 showing the script block for the test.*
 
-- Sysmon Event IDs 13 (Registry value set) and 16 (Sysmon config state changed) were also present. Event 16 is unrelated to the test.
-- **No Sysmon Event ID 15** (FileCreateStreamHash, related to Zone.Identifier). My hypothesis is that this technique evades Mark-of-the-Web, so no Zone.Identifier stream is created to log, and the Sysmon config only filters certain file types. Not yet confirmed.
-
 **Lesson Learned**
-Process and script block logging gave clear evidence, but the absence of Event 15 shows why a detection that depends on Zone.Identifier alone would miss this technique. Next step: compare more event fields (CommandLine, ParentImage, TargetObject) and write a simple detection rule.
+Process creation logging (Sysmon) and script block logging (PowerShell) both recorded the activity, so they are a good starting point for a detection rule. Next step: compare more event fields (CommandLine, ParentImage, TargetObject) and write a simple detection rule.
 
 ---
 
