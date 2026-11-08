@@ -127,15 +127,18 @@ Invoke-AtomicTest T1553.005 -TestNumbers 2 -Cleanup
 
 - **Sysmon Event ID 1 (Process Create)** appeared for the test activity.
 
-[![Sysmon Event ID 1](https://github.com/naphattha/SOC_Home_Lab/raw/main/screenshots/case6-sysmon-event1.png)](https://github.com/naphattha/SOC_Home_Lab/blob/main/screenshots/case6-sysmon-event1.png) *Sysmon Event ID 1 (Process Create) recorded during the test.*
+[![Sysmon Event ID 1](screenshots/case6-sysmon-event1.png)](screenshots/case6-sysmon-event1.png) 
+*Sysmon Event ID 1 (Process Create) recorded during the test.*
 
 - **Sysmon Event ID 11 (File Create)** appeared.
 
-[![Sysmon Event ID 11](https://github.com/naphattha/SOC_Home_Lab/raw/main/screenshots/case6-sysmon-event11.png)](https://github.com/naphattha/SOC_Home_Lab/blob/main/screenshots/case6-sysmon-event11.png) *Sysmon Event ID 11 (File Create) recorded during the test.*
+[![Sysmon Event ID 11](screenshots/case6-sysmon-event11.png)](screenshots/case6-sysmon-event11.png) 
+*Sysmon Event ID 11 (File Create) recorded during the test.*
 
 - **PowerShell Event ID 4104 (Script Block Logging)** captured the commands that ran, confirming PowerShell logging works.
 
-[![PowerShell Event ID 4104](https://github.com/naphattha/SOC_Home_Lab/raw/main/screenshots/case6-ps-event4104.png)](https://github.com/naphattha/SOC_Home_Lab/blob/main/screenshots/case6-ps-event4104.png) *PowerShell Event ID 4104 showing the script block for the test.*
+[![PowerShell Event ID 4104](screenshots/case6-ps-event4104.png)](screenshots/case6-ps-event4104.png) 
+*PowerShell Event ID 4104 showing the script block for the test.*
 
 **Lesson Learned**
 Process creation logging (Sysmon) and script block logging (PowerShell) both recorded the activity, so they are a good starting point for a detection rule. Next step: compare more event fields (CommandLine, ParentImage, TargetObject) and write a simple detection rule.
