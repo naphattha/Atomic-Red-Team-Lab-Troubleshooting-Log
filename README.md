@@ -9,6 +9,8 @@
 
 **Lab rules I follow:** run Atomic Red Team inside the VM only, take a snapshot before every risky step, treat the VM as disposable (revert instead of repair), disable shared folders / clipboard / drag-and-drop, exclude only `C:\AtomicRedTeam` from Defender, read each test with `-ShowDetails` before running it, and always run `-Cleanup` (or revert the snapshot) afterward.
 
+For the full setup walkthrough, see [Atomic Red Team Lab: Blue Team Detection Testing on a Windows 11 VM](https://github.com/naphattha/Atomic-Red-Team-Lab--Blue-Team-Detection-Testing-on-a-Windows-11-VM)
+
 ---
 
 ## Case 1 — VM Stuck on a Black Screen ("VT-x is not available")
